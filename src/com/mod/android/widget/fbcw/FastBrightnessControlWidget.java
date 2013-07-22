@@ -17,24 +17,24 @@ public class FastBrightnessControlWidget extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		
 		//fetch remoteViews
-		RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.main);
+		RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.buttons);
 		
 		//create intents for setting brightness when buttons are clicked
-		Intent setBrightness1 = new Intent(context, BrightnessControl.class);
+		Intent setBrightness1 = new Intent(context, BrightnessControlActivity.class);
 		setBrightness1.setAction(ACTION_SET_BRIGHTNESS);
-		setBrightness1.putExtra("brightness", BRIGHTNESS_BUTTON1);
-		Intent setBrightness2 = new Intent(context, BrightnessControl.class);
+		setBrightness1.putExtra(BUTTON_ID, BUTTON1);
+		Intent setBrightness2 = new Intent(context, BrightnessControlActivity.class);
 		setBrightness2.setAction(ACTION_SET_BRIGHTNESS);
-		setBrightness2.putExtra("brightness", BRIGHTNESS_BUTTON2);
-		Intent setBrightness3 = new Intent(context, BrightnessControl.class);
+		setBrightness2.putExtra(BUTTON_ID, BUTTON2);
+		Intent setBrightness3 = new Intent(context, BrightnessControlActivity.class);
 		setBrightness3.setAction(ACTION_SET_BRIGHTNESS);
-		setBrightness3.putExtra("brightness", BRIGHTNESS_BUTTON3);
-		Intent setBrightness4 = new Intent(context, BrightnessControl.class);
+		setBrightness3.putExtra(BUTTON_ID, BUTTON3);
+		Intent setBrightness4 = new Intent(context, BrightnessControlActivity.class);
 		setBrightness4.setAction(ACTION_SET_BRIGHTNESS);
-		setBrightness4.putExtra("brightness", BRIGHTNESS_BUTTON4);
-		Intent setBrightness5 = new Intent(context, BrightnessControl.class);
+		setBrightness4.putExtra(BUTTON_ID, BUTTON4);
+		Intent setBrightness5 = new Intent(context, BrightnessControlActivity.class);
 		setBrightness5.setAction(ACTION_SET_BRIGHTNESS);
-		setBrightness5.putExtra("brightness", BRIGHTNESS_BUTTON5);
+		setBrightness5.putExtra(BUTTON_ID, BUTTON5);
 		
 		//register on click listeners with buttons		
 		remoteViews.setOnClickPendingIntent(R.id.button1, PendingIntent.getActivity(context, 1, setBrightness1, PendingIntent.FLAG_UPDATE_CURRENT));		
@@ -44,7 +44,6 @@ public class FastBrightnessControlWidget extends AppWidgetProvider {
 		remoteViews.setOnClickPendingIntent(R.id.button5, PendingIntent.getActivity(context, 5, setBrightness5, PendingIntent.FLAG_UPDATE_CURRENT));		
 		appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
 		
-		super.onUpdate(context, appWidgetManager, appWidgetIds);
 	}
 	
 }

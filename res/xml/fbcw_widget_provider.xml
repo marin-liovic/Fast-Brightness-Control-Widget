@@ -3,5 +3,5 @@
     android:minWidth="48dp"
     android:minHeight="208dp"
     android:updatePeriodMillis="0"
-    android:initialLayout="@layout/main" >
+    android:initialLayout="@layout/buttons" >
 </appwidget-provider>

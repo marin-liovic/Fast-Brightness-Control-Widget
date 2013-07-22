@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fast Brightness Control Widget</string>
+    <string name="brightness5">Brightness 5</string>
+    <string name="brightness4">Brightness 4</string>
+    <string name="brightness3">Brightness 3</string>
+    <string name="brightness2">Brightness 2</string>
+    <string name="brightness1">Brightness 1</string>
+    <string name="sign_equal">=</string>
+    <string name="percentage_placeholder">50 %</string>
+    <string name="showMessage">Show Message</string>
+    <string name="title_up">Fast Brightness Control</string>
+    <string name="title_down">Widget</string>
 </resources>

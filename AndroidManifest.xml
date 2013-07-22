@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mod.android.widget.fbcw"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.1" >
 
     <uses-sdk android:minSdkVersion="4" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
@@ -11,6 +11,15 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         
+        <activity android:name=".ConfigurationActivity"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
         <receiver android:name=".FastBrightnessControlWidget" android:label="@string/app_name">
             <intent-filter >
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>                
@@ -18,7 +27,7 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/fbcw_widget_provider"/>                       
         </receiver>
         
-        <activity android:name=".BrightnessControl" android:theme="@style/Theme.Transparent" >
+        <activity android:name=".BrightnessControlActivity" android:theme="@style/Theme.Transparent" >
             <intent-filter >
                 <action android:name="com.mod.android.widget.fbcw.FastBrightnessControlWidget.ACTION_SET_BRIGHTNESS"/>
             </intent-filter>
