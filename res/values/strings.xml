@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fast Brightness Control Widget</string>
     <string name="brightness5">Brightness 5</string>
@@ -11,4 +10,6 @@
     <string name="showMessage">Show Message</string>
     <string name="title_up">Fast Brightness Control</string>
     <string name="title_down">Widget</string>
+    <string name="vertical_widget_name">FBCW Vertical</string>
+    <string name="horizontal_widget_name">FBCW Horizontal</string>
 </resources>

@@ -15,11 +15,11 @@ public class BrightnessControlActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 				
 		//get the ID of the clicked button
-		String buttonId = ((Integer) getIntent().getExtras().get(BUTTON_ID)).toString();
+		Integer buttonId = (Integer) getIntent().getExtras().get(BUTTON_ID);
 		
 		//get the brightness level for clicked button
 		SharedPreferences preferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-		int brightness = preferences.getInt(buttonId, 50);
+		int brightness = preferences.getInt(buttonId.toString(), DEFAULT_BRIGHTNESS_LEVELS.get(buttonId));
 		boolean showMessage = preferences.getBoolean(SHOW_MESSAGE, true);
 		
 		//display message if needed

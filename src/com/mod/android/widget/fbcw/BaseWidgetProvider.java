@@ -9,15 +9,15 @@ import android.widget.RemoteViews;
 
 import static com.mod.android.widget.fbcw.MyConstants.*;
 
-public class FastBrightnessControlWidget extends AppWidgetProvider {
+public abstract class BaseWidgetProvider extends AppWidgetProvider {
 	
 	public static final String ACTION_SET_BRIGHTNESS="com.mod.android.widget.fbcw.SetBrightness";
 	
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		
-		//fetch remoteViews
-		RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.buttons);
+		//create remoteViews
+		RemoteViews remoteViews = createRemoteViews(context.getPackageName());
 		
 		//create intents for setting brightness when buttons are clicked
 		Intent setBrightness1 = new Intent(context, BrightnessControlActivity.class);
@@ -45,5 +45,13 @@ public class FastBrightnessControlWidget extends AppWidgetProvider {
 		appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
 		
 	}
+	
+	/**
+	 * Creates RemoteViews object which will be displayed. Layout resource should contain 5 elements
+	 * with IDs: button1, button2, button3, button4 and button5.
+	 * @param packageName Name of the package that contains the layout resource.
+	 * @return Return RemoteViews object which will be displayed.
+	 */
+	abstract RemoteViews createRemoteViews(String packageName);
 	
 }

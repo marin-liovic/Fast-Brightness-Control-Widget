@@ -35,11 +35,11 @@ public class ConfigurationActivity extends Activity {
 			Boolean showMessage;
 			
 			//read saved state
-			brightnessLevels.put(BUTTON1, preferences.getInt(BUTTON1.toString(), 100));
-			brightnessLevels.put(BUTTON2, preferences.getInt(BUTTON2.toString(), 80));
-			brightnessLevels.put(BUTTON3, preferences.getInt(BUTTON3.toString(), 50));
-			brightnessLevels.put(BUTTON4, preferences.getInt(BUTTON4.toString(), 30));
-			brightnessLevels.put(BUTTON5, preferences.getInt(BUTTON5.toString(), 10));
+			brightnessLevels.put(BUTTON1, preferences.getInt(BUTTON1.toString(), DEFAULT_BRIGHTNESS_LEVELS.get(BUTTON1)));
+			brightnessLevels.put(BUTTON2, preferences.getInt(BUTTON2.toString(), DEFAULT_BRIGHTNESS_LEVELS.get(BUTTON2)));
+			brightnessLevels.put(BUTTON3, preferences.getInt(BUTTON3.toString(), DEFAULT_BRIGHTNESS_LEVELS.get(BUTTON3)));
+			brightnessLevels.put(BUTTON4, preferences.getInt(BUTTON4.toString(), DEFAULT_BRIGHTNESS_LEVELS.get(BUTTON4)));
+			brightnessLevels.put(BUTTON5, preferences.getInt(BUTTON5.toString(), DEFAULT_BRIGHTNESS_LEVELS.get(BUTTON5)));
 			showMessage = preferences.getBoolean(SHOW_MESSAGE, true);			
 			
 			applicationState = new ApplicationState(brightnessLevels, showMessage);

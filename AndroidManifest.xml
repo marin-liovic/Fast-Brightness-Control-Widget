@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mod.android.widget.fbcw"
-    android:versionCode="2"
-    android:versionName="1.1" >
+    android:versionCode="3"
+    android:versionName="1.2" >
 
     <uses-sdk android:minSdkVersion="4" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
@@ -20,11 +20,18 @@
             </intent-filter>
         </activity>
         
-        <receiver android:name=".FastBrightnessControlWidget" android:label="@string/app_name">
+        <receiver android:name=".VerticalWidgetProvider" android:label="@string/vertical_widget_name">
             <intent-filter >
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>                
             </intent-filter>            
-            <meta-data android:name="android.appwidget.provider" android:resource="@xml/fbcw_widget_provider"/>                       
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/fbcw_vertical_provider"/>                       
+        </receiver>
+        
+        <receiver android:name=".HorizontalWidgetProvider" android:label="@string/horizontal_widget_name">
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>                
+            </intent-filter>            
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/fbcw_horizontal_provider"/>                       
         </receiver>
         
         <activity android:name=".BrightnessControlActivity" android:theme="@style/Theme.Transparent" >
