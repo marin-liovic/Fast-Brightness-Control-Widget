@@ -31,6 +31,7 @@ public class BrightnessControlActivity extends Activity {
 		Settings.System.putInt(this.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, (int) Math.ceil(brightness/100.0f*255));
 		
 		//refresh state
+		// window manager accepts brightness in float hence dividing brightness by 100.0f
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		lp.screenBrightness = brightness / 100.0f;
 		getWindow().setAttributes(lp);	
